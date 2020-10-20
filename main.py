@@ -6,7 +6,7 @@ This script will read a csv data file for a mechanical system into the pandas li
 
 # Import libraries
 import pandas as pd
-from src.data import DataMetrics,DataSplit
+from src.data import DataMetrics,DataSplit,AvgNorm
 
 
 # Enter csv data path if different or change file name
@@ -19,4 +19,7 @@ df = pd.read_csv(csv_path)
 DataMetrics(df)
 
 # Split the data into 80-20 train test.
-df_train, df_split = DataSplit(df,0.8)
+df_train, df_val = DataSplit(df,0.8)
+
+# Normalize the data.
+AvgNorm(df_train, df_val)

@@ -1,3 +1,5 @@
+import pandas as pd
+
 def DataMetrics(dataframe):
     '''
     Returns information on dataframe to be analyzed.
@@ -39,8 +41,32 @@ def AvgNorm(df_train,df_val):
     Normalize the datasets before feeding to neural network using the std and avg of parameters
     from the traiing data set
     Input: df_train - Training Dataset
-           df_val - Validation Dataset
+           df_val - Valalidation Dataset
     Output:norm_train - Normalized Training Dataset
            norm_val - Normalzied Validation Dataset
     '''
 
+
+    feature_names = df_train.columns.values
+    
+    df_norm_train = pd.DataFrame(columns = feature_names) 
+    df_norm_val = pd.DataFrame(columns = feature_names) 
+
+    feature_avg = list(map(lambda x: df_train[x].mean(), feature_names))
+    feature_std = list(map(lambda x: df_train[x].std(), feature_names))
+
+    index = 0
+    for i in feature_names:
+        train_slice = df_train.loc[:,i]
+        val_slice = df_val.loc[:,i]
+        df_norm_train[i] = ( train_slice - feature_avg[index]) / feature_std[index]
+        df_norm_val[i] = ( val_slice - feature_avg[index]) / feature_std[index]
+        index+=1
+    
+    print("\n\n\nReturning normalized train and validation set!")
+    print("Normalized Training Dataset Preview:")
+    print(df_norm_train.head(5))
+    print("\nNormalized Validation Dataset Preview:")
+    print(df_norm_val.head(5))
+
+    return df_norm_train, df_norm_val
