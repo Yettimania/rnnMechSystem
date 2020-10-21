@@ -67,9 +67,19 @@ class WindowGenerator():
         return self.make_dataset(self.val_df)
 
     def __str__(self):
+        for example_inputs,example_labels in self.train.take(1):
+            example_inputs_shape = example_inputs.shape
+            example_labels_shape = example_labels.shape
+
         return '\n'.join([
-            f'\n\nTotal window size: {self.total_window_size}',
+            f'\n\nSummary of Dataset',
+            f'-------------------',
+            f'Total window size: {self.total_window_size}',
             f'Input indices: {self.input_indices}',
             f'Label indices: {self.label_indices}',
-            f'Label column name(s): {self.label_columns}'])
+            f'Label column name(s): {self.label_columns}',
+            f'Inputs shape (batch,time,features): {example_inputs_shape}',
+            f'Labels shape (batch,time,features); {example_labels_shape}'
+            ])
+
 
