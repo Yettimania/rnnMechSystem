@@ -27,12 +27,22 @@ df_train, df_val = DataSplit(df,split_index)
 train_df, val_df = AvgNormalization(df_train, df_val)
 
 # Create windowed data sets and labels.
-w1 = WindowGenerator(input_width=6,label_width=1,shift=1,train_df=train_df,val_df=val_df,
+w1 = WindowGenerator(input_width=12,label_width=1,shift=1,train_df=train_df,val_df=val_df,
         label_columns=['Temp'])
 print(w1)
 
+# Print details on training dataset within WindowGenerator class
+print("\n\nInspection of Training Element")
 print(w1.train.element_spec)
-
+print("\n\nExample of Label and Shapes")
 for example_inputs, example_labels in w1.train.take(1):
+    print(f'Inputs shape (batch,time,features): {example_inputs.shape}')
+    print(f'Labels shape (batch,time,features): {example_labels.shape}')
+
+# Print details on validation dataset within WindowGenerator class
+print("\n\nInspection of Validation Element")
+print(w1.val.element_spec)
+print("\n\nExample of Label and Shapes")
+for example_inputs, example_labels in w1.val.take(1):
     print(f'Inputs shape (batch,time,features): {example_inputs.shape}')
     print(f'Labels shape (batch,time,features): {example_labels.shape}')
