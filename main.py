@@ -6,7 +6,8 @@ This script will read a csv data file for a mechanical system into the pandas li
 
 # Import libraries
 import pandas as pd
-from src.data import DataMetrics,DataSplit,AvgNorm
+from src.data import DataMetrics,DataSplit,AvgNormalization
+from src.windowdata import WindowGenerator
 
 
 # Enter csv data path if different or change file name
@@ -19,7 +20,19 @@ df = pd.read_csv(csv_path)
 DataMetrics(df)
 
 # Split the data into 80-20 train test.
-df_train, df_val = DataSplit(df,0.8)
+split_index = 0.8
+df_train, df_val = DataSplit(df,split_index)
 
-# Normalize the data.
-AvgNorm(df_train, df_val)
+# Normalize the data the training and val sets
+train_df, val_df = AvgNormalization(df_train, df_val)
+
+# Create windowed data sets and labels.
+w1 = WindowGenerator(input_width=6,label_width=1,shift=1,train_df=train_df,val_df=val_df,
+        label_columns=['Temp'])
+print(w1)
+
+print(w1.train.element_spec)
+
+for example_inputs, example_labels in w1.train.take(1):
+    print(f'Inputs shape (batch,time,features): {example_inputs.shape}')
+    print(f'Labels shape (batch,time,features): {example_labels.shape}')

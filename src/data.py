@@ -36,7 +36,7 @@ def DataSplit(dataframe,train_split):
         ]))
     return df_train,df_val
 
-def AvgNorm(df_train,df_val):
+def AvgNormalization(df_train,df_val):
     '''
     Normalize the datasets before feeding to neural network using the std and avg of parameters
     from the traiing data set
