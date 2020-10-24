@@ -31,8 +31,7 @@ df_train, df_val = DataSplit(df,split_index)
 train_df, val_df = AvgNormalization(df_train, df_val)
 
 # Create windowed data sets and labels. Display summary.
-w1 = WindowGenerator(input_width=24,label_width=1,shift=1,train_df=train_df,val_df=val_df,
-        label_columns=['Temp'])
+w1 = WindowGenerator(input_width=24,label_width=1,shift=1,train_df=train_df,val_df=val_df,label_columns=['Pressure'])
 print(w1) 
 
 # Import models from source
