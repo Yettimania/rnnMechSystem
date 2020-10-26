@@ -10,6 +10,8 @@ We'll hypothesize a bladder accumulator installed at a solar power plant in the 
 
 By predicting performance of these types of systems, operators of the plant or equipment can optimize resources and minimize downtime when it comes to equipment failure and health monitoring.
 
+![](./figs/Actual_v_Predicted.png)
+
 ## Documentation
 
 There are two notebooks that contain details on the project. The first being exploration for the project and the second having documented details on the `main.py` file along with conclusive analysis of the model.
@@ -19,6 +21,8 @@ The final notebook is found [here](https://github.com/Yettimania/rnnMechSystem/b
 ## File Structure
 
 `data` - Contains the raw data, typically a CSV file which was generated from Notebook 1
+
+![](./figs/RawData.png)
 
 `figs` - Directory for storing graphics of raw data, model loss, predictions, etc.
 
