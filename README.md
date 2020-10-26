@@ -14,7 +14,7 @@ By predicting performance of these types of systems, operators of the plant or e
 
 There are two notebooks that contain details on the project. The first being exploration for the project and the second having documented details on the `main.py` file along with conclusive analysis of the model.
 
-The final notebook is found [here](rnnMechSystem/notebooks/1- Exploration of Mechanical System RNN.ipynb)
+The final notebook is found [here](notebooks/2 - Recurrent Neural Networks for Sensor Data in Mechanical Systems FINAL.ipynb)
 
 ## File Structure
 
