@@ -28,7 +28,7 @@ The final notebook is found [here](https://github.com/Yettimania/rnnMechSystem/b
 
 `notebooks` - Jupyter notebooks used for data exploration and documentation.
 
-`src` - Developed libraries used within the `main.py` script. Contains
+`src` - Developed functions and classes used within the `main.py` script. Contains
 1. `data` - Functions for preprocessing raw data
 2. `model` - Tensorflow model objects that can be defined and imported to `main.py`
 3. `visualization` - Functions to generate graphics using `matplotlib` library
