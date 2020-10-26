@@ -14,11 +14,11 @@ By predicting performance of these types of systems, operators of the plant or e
 
 There are two notebooks that contain details on the project. The first being exploration for the project and the second having documented details on the `main.py` file along with conclusive analysis of the model.
 
-
+The final notebook is found [here](rnnMechSystem/notebooks/1- Exploration of Mechanical System RNN.ipynb)
 
 ## File Structure
 
-`data` - Contains the raw data, typically a CSV file which was generated from [Notebook 1](./notebooks/'1- Exploration of Mechanical System RNN.ipynb')
+`data` - Contains the raw data, typically a CSV file which was generated from Notebook 1
 
 `figs` - Directory for storing graphics of raw data, model loss, predictions, etc.
 
