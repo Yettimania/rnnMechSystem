@@ -14,7 +14,7 @@ By predicting performance of these types of systems, operators of the plant or e
 
 There are two notebooks that contain details on the project. The first being exploration for the project and the second having documented details on the `main.py` file along with conclusive analysis of the model.
 
-The final notebook is found [here](https://github.com/Yettimania/rnnMechSystem/blob/main/notebooks/.ipynb_checkpoints/2%20-%20Recurrent%20Neural%20Networks%20for%20Sensor%20Data%20in%20Mechanical%20Systems%20FINAL-checkpoint.ipynb)
+The final notebook is found [here](https://github.com/Yettimania/rnnMechSystem/blob/main/notebooks/2%20-%20Recurrent%20Neural%20Networks%20for%20Sensor%20Data%20in%20Mechanical%20Systems%20FINAL.ipynb)
 
 ## File Structure
 
