@@ -10,9 +10,15 @@ We'll hypothesize a bladder accumulator installed at a solar power plant in the 
 
 By predicting performance of these types of systems, operators of the plant or equipment can optimize resources and minimize downtime when it comes to equipment failure and health monitoring.
 
+## Documentation
+
+There are two notebooks that contain details on the project. The first being exploration for the project and the second having documented details on the `main.py` file along with conclusive analysis of the model.
+
+
+
 ## File Structure
 
-`data` - Contains the raw data, typically a CSV file which was generated from [Notebook 1](./notebooks/1- Exploration of Mechanical System RNN.ipynb)
+`data` - Contains the raw data, typically a CSV file which was generated from [Notebook 1](./notebooks/'1- Exploration of Mechanical System RNN.ipynb')
 
 `figs` - Directory for storing graphics of raw data, model loss, predictions, etc.
 
@@ -31,7 +37,7 @@ Main script to develop neural networks for time series data. Usage of the `main.
 2. Import csv data to dataframe
 3. Split the the dataframe into training and validation
 4. Normalize the dataframes
-5. Develop windowed data with ****inputs* and *labels*
+5. Develop windowed data with *inputs* and *labels*
 6. Import defined models in `src/model.py`
 7. Plot performance and prediction data
 
