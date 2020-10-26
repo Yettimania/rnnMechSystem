@@ -2,6 +2,11 @@ import matplotlib.pyplot as plt
 import os
 
 def plot_loss(history, title):
+    '''
+    Plot the loss for the inputed model and save to ./figs/ directory
+    Input: history object returned from model
+           title - "string" for file name
+    '''
     plt.figure(figsize=(10,6))
     loss = history.history['loss']
     epochs = range(len(loss))
